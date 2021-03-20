@@ -1,0 +1,33 @@
+section#steam-gallery {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+#steam-gallery div {
+  position: relative;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+#steam-gallery img {
+  width: 100%;
+}
+#steam-gallery p {
+  max-width: 400px;
+  text-align: center;
+}
+#steam-gallery span {
+  font-size: 2em;
+  cursor: pointer;
+}
+#steam-gallery .back {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+}
+#steam-gallery .next {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+}
