@@ -3,6 +3,7 @@ section#steam-gallery {
   margin: auto;
   display: flex;
   flex-direction: column;
+  background: #eee;
 }
 #steam-gallery article {
   position: relative;
@@ -24,6 +25,16 @@ section#steam-gallery {
   max-width: 400px;
   text-align: center;
 }
+#steam-gallery .excerpt {
+  margin-bottom: 0;
+  padding: 2em;
+  padding-bottom: 1em;
+  background: #333;
+  color: white;
+}
+#steam-gallery .excerpt p {
+  margin-top: 0;
+}
 #steam-gallery span {
   font-size: 2em;
   cursor: pointer;
@@ -31,10 +42,16 @@ section#steam-gallery {
 #steam-gallery .back {
   position: absolute;
   top: 50%;
-  left: -20px;
+  left: -30px;
+  transition: transform 300ms;
 }
 #steam-gallery .next {
   position: absolute;
   top: 50%;
-  right: -20px;
+  right: -30px;
+  transition: transform 300ms;
+}
+#steam-gallery .back:hover,
+#steam-gallery .next:hover {
+  transform: scale(1.5);
 }

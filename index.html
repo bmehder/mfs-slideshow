@@ -19,13 +19,13 @@
     >
       <article>
         <span class="back" @click="goBack()">&#10094;</span>
-        <div>
-          <img x-ref="image" x-show="posts[index]" :src="posts[index]?.featured_image"
+        <div x-show="posts[index]?.featured_image">
+          <img x-ref="image" :src="posts[index]?.featured_image"
         alt="gallery-item" />
         </div>
         <span class="next" @click="goNext()">&#10095;</button>
       </article>
-      <p x-show="posts[index]" x-html="posts[index]?.excerpt"></p>
+      <p class="excerpt" x-show="posts[index]?.excerpt" x-html="posts[index]?.excerpt"></p>
     </section>
     <script src="app.js"></script>
   </body>
