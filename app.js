@@ -1,25 +1,39 @@
 function galleries() {
   return {
+    // State
     index: 0,
     posts: [],
+    wide: true,
+
+    // Utility
     getPosts(url) {
       fetch(url)
         .then((res) => res.json())
         .then((data) => (this.posts = data.posts));
     },
-    next() {
-      if (this.index < this.posts.length - 1) {
+
+    // Controllers
+    goNext() {
+      if (this.isNotLast()) {
         this.index++;
-      } else {
-        this.index = 0;
+        return;
       }
+      this.index = 0;
     },
-    back() {
-      if (this.index > 0) {
+    goBack() {
+      if (this.isNotFirst()) {
         this.index--;
-      } else {
-        this.index = this.posts.length - 1;
+        return;
       }
+      this.index = this.posts.length - 1;
+    },
+
+    // Predicates
+    isNotLast() {
+      return this.index < this.posts.length - 1 ? true : false;
+    },
+    isNotFirst() {
+      return this.index > 0 ? true : false;
     },
   };
 }

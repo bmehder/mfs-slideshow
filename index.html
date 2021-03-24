@@ -17,12 +17,15 @@
       x-data="galleries()"
       x-init="getPosts('https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/?category=steam')"
     >
-      <div>
-        <span class="back" @click="back()">&#10094;</span>
-        <img :src="posts[index]?.featured_image" alt="gallery-item" />
-        <span class="next" @click="next()">&#10095;</button>
-      </div>
-      <p x-html="posts[index]?.excerpt"></p>
+      <article>
+        <span class="back" @click="goBack()">&#10094;</span>
+        <div>
+          <img x-ref="image" x-show="posts[index]" :src="posts[index]?.featured_image"
+        alt="gallery-item" />
+        </div>
+        <span class="next" @click="goNext()">&#10095;</button>
+      </article>
+      <p x-show="posts[index]" x-html="posts[index]?.excerpt"></p>
     </section>
     <script src="app.js"></script>
   </body>

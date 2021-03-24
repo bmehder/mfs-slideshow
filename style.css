@@ -4,14 +4,21 @@ section#steam-gallery {
   display: flex;
   flex-direction: column;
 }
-#steam-gallery div {
+#steam-gallery article {
   position: relative;
   max-width: 400px;
   display: flex;
   align-items: center;
 }
+#steam-gallery div {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
 #steam-gallery img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 #steam-gallery p {
   max-width: 400px;
